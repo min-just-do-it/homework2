@@ -47,7 +47,7 @@ def draw_bar(x, height, label, color = "black"):
     # 점수 출력 (막대 위)
     pen.penup()
     pen.goto(x + bar_width / 2, base_y + height + 10)
-    pen.write(f"{height:.5f}", align="center")
+    pen.write(f"{height:.6f}", align="center")
 
     # 과목명 출력 (막대 아래)
     pen.goto(x + bar_width / 2, base_y - 20)

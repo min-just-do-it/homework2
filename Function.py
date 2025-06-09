@@ -33,17 +33,17 @@ def Read_files():
                 math = int(parts[4])
                 
 
-                avg = round((kor + eng + math) / 3, 5) #소수점 5자리
+                avg = round((kor + eng + math) / 3, 6) #소수점 6자리
                 deg = personal_grade(avg)
 
-                student = Students(name, dept, kor, eng, math, avg, deg) #
+                student = Students(name, dept, kor, eng, math, avg, deg) ###
                 students_list.append(student)
 #파일 데이터 읽어오면서 띄어쓰기로 구분된 값을 저장
 
 def print_write_files():
     with open('result.txt', 'w', encoding='utf-8') as files:
         for student in students_list:
-            files.write(f"{student.name} {student.dept} {student.kor} {student.eng} {student.math} {student.avg} {student.deg}")
+            files.write(f"{student.name} {student.dept} {student.kor} {student.eng} {student.math} {student.avg} {student.deg}\n")
         files.write(f"\n\n\n {deg_count()}")
         for student in students_list:
             print(f"{student.name} {student.dept} {student.kor} {student.eng} {student.math} {student.avg} {student.deg}")
